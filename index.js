@@ -16,8 +16,9 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
+function dosyaAdiniBul(path) {
+  const newpath=path.split("/");
+  return newpath[newpath.length-1];
 }
 
 /*
@@ -38,8 +39,14 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamaBul(sayılar) {
+  if (sayılar.length===0){
+    return null;
+  }
+  else {
+
+  let sum= sayılar.reduce((a,b)=>a+b,0);
+  return sum/sayılar.length;}
 }
 
 /*
@@ -62,8 +69,12 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(sayılar,ortalamaBul) {
+  if (sayılar.length === 0) {
+    return null;
+  
+  let newsayılar=sayılar.map((sayı)=>sayı>=ortalamaBul(sayılar));
+  return newsayılar;
 }
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
